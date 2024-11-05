@@ -19,6 +19,8 @@ router.get('/login', async (req, res) => {
 router.get('/schedule', async (req, res) => {
     try {
         const schedule = await Schedule.findById(id).populate('schedule')
-        res.json(schedule)
+        res.json(schedule) 
+    } catch (e) {
+        res.json(e)
     }
 })
